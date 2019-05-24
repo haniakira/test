@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>pacman 命令的基本用法</title>
+      <link href="/pacman/"/>
+      <url>/pacman/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pacman命令的基本用法"><a href="#pacman命令的基本用法" class="headerlink" title="pacman命令的基本用法"></a>pacman命令的基本用法</h1><h2 id="查看包组的软件"><a href="#查看包组的软件" class="headerlink" title="查看包组的软件"></a>查看包组的软件</h2><pre><code>pacman -Sg groups</code></pre><h2 id="安装一个包"><a href="#安装一个包" class="headerlink" title="安装一个包"></a>安装一个包</h2><pre><code>pacman -S pkg_name </code></pre><h2 id="升级整个系统"><a href="#升级整个系统" class="headerlink" title="升级整个系统"></a>升级整个系统</h2><pre><code>pacman -Syu</code></pre><h2 id="升级系统时安装其他软件包"><a href="#升级系统时安装其他软件包" class="headerlink" title="升级系统时安装其他软件包"></a>升级系统时安装其他软件包</h2><pre><code>pacman -Syu pkg_name</code></pre><h2 id="同步数据库"><a href="#同步数据库" class="headerlink" title="同步数据库"></a>同步数据库</h2><pre><code>pacman -Sy</code></pre><h2 id="卸载软件包及其依赖"><a href="#卸载软件包及其依赖" class="headerlink" title="卸载软件包及其依赖"></a>卸载软件包及其依赖</h2><pre><code>pacman -Rsc pkg_name</code></pre><h2 id="只卸载软件包而不卸载其依赖"><a href="#只卸载软件包而不卸载其依赖" class="headerlink" title="只卸载软件包而不卸载其依赖"></a>只卸载软件包而不卸载其依赖</h2><pre><code>pacman -Rdd pkg_name</code></pre><h2 id="查询文件所属的包"><a href="#查询文件所属的包" class="headerlink" title="查询文件所属的包"></a>查询文件所属的包</h2><pre><code>pacman -Fs file</code></pre><h2 id="数据库中查找包名及其描述"><a href="#数据库中查找包名及其描述" class="headerlink" title="数据库中查找包名及其描述"></a>数据库中查找包名及其描述</h2><pre><code>pacman -Ss str1 str2</code></pre><h2 id="查找已安装的包及其描述"><a href="#查找已安装的包及其描述" class="headerlink" title="查找已安装的包及其描述"></a>查找已安装的包及其描述</h2><pre><code>pacman -Qs str1 str2</code></pre><h2 id="下载软件包而不安装"><a href="#下载软件包而不安装" class="headerlink" title="下载软件包而不安装"></a>下载软件包而不安装</h2><pre><code>pacman -Sw pkg_name</code></pre><h2 id="将软件包保存到本地"><a href="#将软件包保存到本地" class="headerlink" title="将软件包保存到本地"></a>将软件包保存到本地</h2><pre><code>pacman -U file://path/to/pkg_name-version.pkg.tar.xz</code></pre><h2 id="从本地安装软件包"><a href="#从本地安装软件包" class="headerlink" title="从本地安装软件包"></a>从本地安装软件包</h2><pre><code>-pacman -U /pach/to/pkg_name.pkg.tar.xz</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> ArchLinux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS 7 安装 Nextcloud</title>
+      <link href="/centos-7-nextcloud/"/>
+      <url>/centos-7-nextcloud/</url>
+      
+        <content type="html"><![CDATA[<ul><li>安装 php 7.1 和 Nextcloud 需要的包</li></ul><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y epel-release</span><br><span class="line">rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br><span class="line">yum install -y php71w-fpm php71w-gd php71w-mbstring php71w-mysqlnd php71w-opcache php71w-cli php71w-xml php71w-mcrypt php71w-common php71w-pdo php71w-pecl-apcu php71w-pear</span><br></pre></td></tr></table></figure><ul><li><p>安装 Apache</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> -y apache</span><br></pre></td></tr></table></figure></li><li><p>安装和配置 MariaDB</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> mariadb mariadb-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></li></ul><p>启动 MariaDB 并添加到开机启动的服务。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb</span><br><span class="line">systemctl <span class="builtin-name">enable</span> mariadb</span><br></pre></td></tr></table></figure></p><p>设置 MariaDB root 用户的密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure></p><p>按照提示操作即可，然后为 Nextcloud 创建一个新的数据路 nextcloud_db 和用户 nextclouduser。<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql -u root -p</span></span><br></pre></td></tr></table></figure></p><p>输入刚才的密码即可登录 mysql shell，输入下面的命令创建数据库和用户。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> nextcloud_db;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> nextclouduser@localhost <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'passwd'</span>;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> nextcloud_db.* <span class="keyword">to</span> nextclouduser@localhost <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'passwd'</span>;</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p><ul><li><p>下载安装 Nextcloud</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">https:</span><span class="comment">//download.nextcloud.com/server/releases/nextcloud-13.0.4.tar.bz2</span></span><br><span class="line">tar -xjvf nextcloud<span class="number">-13.0</span><span class="number">.4</span>.tar.bz2 </span><br><span class="line">mv nextcloud <span class="regexp">/var/</span>www<span class="regexp">/html/</span></span><br><span class="line">chown -R <span class="string">apache:</span>apache <span class="regexp">/var/</span>www<span class="regexp">/html/</span>nextcloud</span><br><span class="line">chmod -R <span class="number">755</span> <span class="regexp">/var/</span>www<span class="regexp">/html/</span>nextcloud</span><br></pre></td></tr></table></figure></li><li><p>为 Nextcloud 新建虚拟主机</p></li></ul><p>新建一个配置文件nextcloud.conf。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/httpd/<span class="keyword">conf</span>.d/nextcloud.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></p><p>把类似以下的内容粘贴到配置文件中。<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *:80&gt;</span></span><br><span class="line">    <span class="section">&lt;Directory /var/www/html/nextcloud/&gt;</span></span><br><span class="line">        <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">    <span class="section">&lt;/Directory&gt;</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">ServerName</span></span> domain.com</span><br><span class="line">    <span class="attribute">IndexOptions</span> Charset=UTF-8</span><br><span class="line">    <span class="attribute"><span class="nomarkup">DocumentRoot</span></span> <span class="string">"/var/www/html/nextcloud/"</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">RewriteEngine</span></span> <span class="literal">on</span></span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure></p><p>在/etc/httpd/conf/httpd.conf的最后加上以下内容。<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;FilesMatch \.php$&gt;</span></span><br><span class="line"><span class="comment"># SetHandler application/x-httpd-php</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">SetHandler</span></span> <span class="string">"proxy:fcgi://127.0.0.1:9000"</span></span><br><span class="line"><span class="section">&lt;/FilesMatch&gt;</span></span><br></pre></td></tr></table></figure></p><p>启动 php-fpm 和 Apache，并且将它们设置为开机启动的服务。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start php-fpm</span><br><span class="line">systemctl <span class="builtin-name">enable</span> php-fpm</span><br><span class="line">systemctl start httpd</span><br><span class="line">systemctl <span class="builtin-name">enable</span> httpd</span><br></pre></td></tr></table></figure></p><ul><li>防火墙的配置</li></ul><p>开启 http 和 https 端口。<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --permanent --add-service=http</span></span><br><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --permanent --add-service=https</span></span><br><span class="line">firewall-<span class="keyword">cmd</span><span class="bash"> --reload</span></span><br></pre></td></tr></table></figure></p><p>然后可以通过<a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a>启用https，访问 domain.com 即可完成安装。</p><ul><li>SELinux 的问题</li></ul><p>如果按照上面的步骤安装好后，无法访问 domain.com，出现下面的错误，有可能就是SELinux的问题。先运行 setenforce 0，如果仍不能访问，则有可能是那个地方没做好，如果能访问则继续往下。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">semanage fcontext -<span class="selector-tag">a</span> -t httpd_sys_rw_content_t <span class="string">'/var/www/html/nextcloud/data(/.*)?'</span></span><br><span class="line">semanage fcontext -<span class="selector-tag">a</span> -t httpd_sys_rw_content_t <span class="string">'/var/www/html/nextcloud/config(/.*)?'</span></span><br><span class="line">semanage fcontext -<span class="selector-tag">a</span> -t httpd_sys_rw_content_t <span class="string">'/var/www/html/nextcloud/apps(/.*)?'</span></span><br><span class="line">semanage fcontext -<span class="selector-tag">a</span> -t httpd_sys_rw_content_t <span class="string">'/var/www/html/nextcloud/.htaccess'</span></span><br><span class="line">semanage fcontext -<span class="selector-tag">a</span> -t httpd_sys_rw_content_t <span class="string">'/var/www/html/nextcloud/.user.ini'</span></span><br><span class="line">restorecon -Rv <span class="string">'/var/www/html/nextcloud/'</span></span><br></pre></td></tr></table></figure></p><p>更多SELinux相关的问题请看<a href="https://docs.nextcloud.com/server/13/admin_manual/installation/selinux_configuration.html" target="_blank" rel="noopener">这里</a>。</p><ul><li>安全及设置警告</li></ul><p>在基本设置中有可能会看到安全及设置警告。</p><blockquote><p>安全及设置警告   你的每项配置对于实例的安全性和性能都至关重要。 为了帮助您，我们正在做一些自动检查。<br>有关详细信息，请参阅提示与技巧部分和文档。 HTTP 请求头 “Strict-Transport-Security” 没有配置为至少<br>“15552000” 秒。 出于增强安全性考虑, 推荐按照安全提示中的说明启用HSTS。<br>内存缓存未配置，为了提升使用体验，请尽量配置内存缓存。更多信息请参见<a href="https://docs.nextcloud.com/server/13/go.php?to=admin-performance" target="_blank" rel="noopener">文档</a>。 PHP 的组件 OPcache<br>没有正确配置。<a href="https://docs.nextcloud.com/server/13/go.php?to=admin-php-opcache" target="_blank" rel="noopener">为了提供更好的性能</a>，我们建议在php.ini中使用下列设置：</p><pre><code>opcache.enable=1opcache.enable_cli=1opcache.interned_strings_buffer=8opcache.max_accelerated_files=10000opcache.memory_consumption=128opcache.save_comments=1opcache.revalidate_freq=1</code></pre><p>请仔细检查<a href="https://docs.nextcloud.com/server/13/go.php?to=admin-install" target="_blank" rel="noopener">安装指南</a>，并检查<a href="http://localhost/index.php/settings/admin/logging" target="_blank" rel="noopener">日志</a>中是否有错误或警告。</p></blockquote><p>完全可以不管它的，有强迫症的，按以下步骤解决。 在<code>/var/www/html/nextcloud/.htaccess</code>最后加上<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;IfModule mod_headers.c&gt;</span></span><br><span class="line"><span class="attribute"><span class="nomarkup">Header</span></span> always set Strict-Transport-Security <span class="string">"max-age=15552000; includeSubDomains"</span></span><br><span class="line"><span class="section">&lt;/IfModule&gt;</span></span><br></pre></td></tr></table></figure></p><p>在 Nextcloud 的<code>config.php</code>文件加上<code>&#39;memcache.local&#39; =&gt; &#39;\OC\Memcache\APCu&#39;,</code>。 编辑<code>/etc/php.d/opcache.ini</code>在相应的地方改为下面的值。<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">opcache.enable</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">opcache.enable_cli</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">opcache.interned_strings_buffer</span>=<span class="number">8</span></span><br><span class="line"><span class="attr">opcache.max_accelerated_files</span>=<span class="number">10000</span></span><br><span class="line"><span class="attr">opcache.memory_consumption</span>=<span class="number">128</span></span><br><span class="line"><span class="attr">opcache.save_comments</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">opcache.revalidate_freq</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure></p><p>最后重启一下服务即可。</p><ul><li>外部存储</li></ul><p>在应用管理界面启用 External storage support，打开外部存储设置页面，可能会提示<code>“没有安装 &quot;smbclient&quot;. 无法挂载 &quot;SMB / CIFS&quot;, &quot;SMB / CIFS 使用 OC 登录信息 &quot;</code>.请联系您的系统管理员安装.”解决方法如下。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> samba-<span class="keyword">client</span></span><br></pre></td></tr></table></figure></p><p>重启<code>php-fpm</code>生效。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Nextcloud </tag>
+            
+            <tag> 网盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>删除CentOS 7 &quot;with debugging&quot;的启动选项</title>
+      <link href="/remove-centos-7-menuentry-with-debugging/"/>
+      <url>/remove-centos-7-menuentry-with-debugging/</url>
+      
+        <content type="html"><![CDATA[<p>编辑<code>/etc/sysconfig/kernel</code>， 把<code>&quot;MAKEDEBUG=yes</code>这行行删掉或者注释掉。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># MAKEDEBUG specifies <span class="keyword">if</span> <span class="keyword">new</span>-kernel-pkg should create non-<span class="keyword">default</span></span><br><span class="line"># <span class="string">"debug"</span> entries <span class="keyword">for</span> <span class="keyword">new</span> kernels.</span><br><span class="line"># MAKEDEBUG=yes</span><br></pre></td></tr></table></figure></p><p> 最后执行<code>grub2-mkconfig -o /boot/grub2/grub.cfg</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Centos 7 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS 7开启bbr</title>
+      <link href="/centos7-bbr/"/>
+      <url>/centos7-bbr/</url>
+      
+        <content type="html"><![CDATA[<ul><li>安装最新内核<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm --<span class="keyword">import</span> <span class="string">https:</span><span class="comment">//www.elrepo.org/RPM-GPG-KEY-elrepo.org</span></span><br><span class="line">rpm -Uvh <span class="string">http:</span><span class="comment">//www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm</span></span><br><span class="line">yum --enablerepo=elrepo-kernel install kernel-ml</span><br></pre></td></tr></table></figure></li></ul><p>列出已安装的内核<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">awk</span> -F\<span class="string">' '</span><span class="variable">$1</span>==<span class="string">"menuentry "</span> &#123;<span class="attribute">print</span> i++ <span class="string">" : "</span> <span class="variable">$2</span>&#125;<span class="string">' /etc/grub2.cfg</span></span><br></pre></td></tr></table></figure></p><p>输出类似信息<br><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span>: CentOS Linux (<span class="number">3.10.0</span>-<span class="number">693.21.1.e</span>l7.x86_64) <span class="number">7</span> (Core)</span><br><span class="line"><span class="symbol">1 </span>: CentOS Linux (<span class="number">4.14.12</span>-<span class="number">1.e</span>l7.elrepo.x86_64) <span class="number">7</span> (Core)</span><br><span class="line"><span class="symbol">2 </span>: CentOS Linux (<span class="number">3.10.0</span>-<span class="number">693.11.6.e</span>l7.x86_64) <span class="number">7</span> (Core)</span><br><span class="line"><span class="symbol">3 </span>: CentOS Linux (<span class="number">0</span>-rescue-<span class="number">0</span>c956a18d98e4e58b6ee2f208c877d87) <span class="number">7</span> (Core)</span><br><span class="line"><span class="symbol">4 </span>: CentOS Linux (<span class="number">0</span>-rescue-f93f471fcefa4190a918621cd9b830e9) <span class="number">7</span> (Core)</span><br></pre></td></tr></table></figure></p><ul><li><p>把最新内核设为默认启动</p><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">grub2</span>-set-<span class="keyword">default</span> '<span class="type">CentOS</span> <span class="type">Linux</span> (4.14.12-1.<span class="title">el7</span>.<span class="title">elrepo</span>.<span class="title">x86_64</span>) 7 (<span class="type">Core</span>)'</span><br></pre></td></tr></table></figure></li><li><p>重启，查看当前内核</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">uname -a</span></span><br></pre></td></tr></table></figure></li></ul><p>输出<code>Linux localhost 4.14.12-1.el7.elrepo.x86_64 #1 SMP Fri Jan 5 13:28:56 EST 2018 x86_64 x86_64 x86_64 GNU/Linux</code>，内核更换成功。</p><ul><li><p>编辑<code>/etc/sysctl.conf</code>在末尾加入以下内容</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net<span class="selector-class">.core</span><span class="selector-class">.default_qdisc</span> = fq</span><br><span class="line">net<span class="selector-class">.ipv4</span><span class="selector-class">.tcp_congestion_control</span> = bbr</span><br></pre></td></tr></table></figure></li><li><p>运行<code>sysctl -p</code>使配置生效<br>运行<code>lsmod | grep &#39;bbr&#39;</code>查看BBR是否启动，看到有<code>tcp_bbr</code> 即说明<code>bbr</code>已启动。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bbr </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> Centos 7 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
