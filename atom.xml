@@ -3,11 +3,11 @@
   <title>iAkira</title>
   
   <subtitle>此处还缺一杯红酒</subtitle>
-  <link href="/test/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://haniakira.github.io/"/>
+  <link href="https://t.iakira.net/"/>
   <updated>2019-05-19T15:01:36.277Z</updated>
-  <id>https://haniakira.github.io/</id>
+  <id>https://t.iakira.net/</id>
   
   <author>
     <name>iAkira</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>pacman 命令的基本用法</title>
-    <link href="https://haniakira.github.io/pacman/"/>
-    <id>https://haniakira.github.io/pacman/</id>
+    <link href="https://t.iakira.net/pacman/"/>
+    <id>https://t.iakira.net/pacman/</id>
     <published>2019-03-04T07:40:11.000Z</published>
     <updated>2019-05-19T15:01:36.277Z</updated>
     
@@ -33,19 +33,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://haniakira.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://haniakira.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/tags/Linux/"/>
     
-      <category term="ArchLinux" scheme="https://haniakira.github.io/tags/ArchLinux/"/>
+      <category term="ArchLinux" scheme="https://t.iakira.net/tags/ArchLinux/"/>
     
   </entry>
   
   <entry>
     <title>CentOS 7 安装 Nextcloud</title>
-    <link href="https://haniakira.github.io/centos-7-nextcloud/"/>
-    <id>https://haniakira.github.io/centos-7-nextcloud/</id>
+    <link href="https://t.iakira.net/centos-7-nextcloud/"/>
+    <id>https://t.iakira.net/centos-7-nextcloud/</id>
     <published>2018-06-18T09:17:27.000Z</published>
     <updated>2019-05-19T15:00:03.757Z</updated>
     
@@ -70,21 +70,21 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://haniakira.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/categories/Linux/"/>
     
     
-      <category term="Nextcloud" scheme="https://haniakira.github.io/tags/Nextcloud/"/>
+      <category term="Nextcloud" scheme="https://t.iakira.net/tags/Nextcloud/"/>
     
-      <category term="Linux" scheme="https://haniakira.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/tags/Linux/"/>
     
-      <category term="网盘" scheme="https://haniakira.github.io/tags/%E7%BD%91%E7%9B%98/"/>
+      <category term="网盘" scheme="https://t.iakira.net/tags/%E7%BD%91%E7%9B%98/"/>
     
   </entry>
   
   <entry>
     <title>删除CentOS 7 &quot;with debugging&quot;的启动选项</title>
-    <link href="https://haniakira.github.io/remove-centos-7-menuentry-with-debugging/"/>
-    <id>https://haniakira.github.io/remove-centos-7-menuentry-with-debugging/</id>
+    <link href="https://t.iakira.net/remove-centos-7-menuentry-with-debugging/"/>
+    <id>https://t.iakira.net/remove-centos-7-menuentry-with-debugging/</id>
     <published>2018-05-03T10:13:02.000Z</published>
     <updated>2019-05-19T15:03:51.394Z</updated>
     
@@ -98,19 +98,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://haniakira.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://haniakira.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/tags/Linux/"/>
     
-      <category term="Centos 7" scheme="https://haniakira.github.io/tags/Centos-7/"/>
+      <category term="Centos 7" scheme="https://t.iakira.net/tags/Centos-7/"/>
     
   </entry>
   
   <entry>
     <title>CentOS 7开启bbr</title>
-    <link href="https://haniakira.github.io/centos7-bbr/"/>
-    <id>https://haniakira.github.io/centos7-bbr/</id>
+    <link href="https://t.iakira.net/centos7-bbr/"/>
+    <id>https://t.iakira.net/centos7-bbr/</id>
     <published>2017-12-20T14:16:41.000Z</published>
     <updated>2019-05-19T15:08:14.054Z</updated>
     
@@ -136,14 +136,14 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://haniakira.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://haniakira.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://t.iakira.net/tags/Linux/"/>
     
-      <category term="bbr" scheme="https://haniakira.github.io/tags/bbr/"/>
+      <category term="bbr" scheme="https://t.iakira.net/tags/bbr/"/>
     
-      <category term="Centos 7" scheme="https://haniakira.github.io/tags/Centos-7/"/>
+      <category term="Centos 7" scheme="https://t.iakira.net/tags/Centos-7/"/>
     
   </entry>
   
